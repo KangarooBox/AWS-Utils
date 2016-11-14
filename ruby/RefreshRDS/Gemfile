@@ -1,0 +1,13 @@
+source 'https://rubygems.org'
+
+gem 'aws-sdk'
+gem 'activesupport', '~>4.0', require: 'active_support/all'
+
+group :development do
+  gem 'rerun'
+  gem 'rb-fsevent', '~> 0.9'
+end
+
+group :test do
+  gem 'minitest'
+end

@@ -1,0 +1,5 @@
+:development:
+  :debug: true
+
+:production:
+  :debug: true

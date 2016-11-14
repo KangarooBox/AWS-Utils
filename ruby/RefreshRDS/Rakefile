@@ -1,0 +1,17 @@
+require 'aws-sdk'
+require 'rake/testtask'
+
+# Add some friendly logging support
+LOG = Logger.new(STDOUT)
+LOG.formatter = Logger::Formatter.new
+LOG.level = Logger::INFO
+def debug(msg="");  LOG.debug msg; end
+def info(msg="");   LOG.info  msg; end
+def error(msg="");  LOG.error msg; end
+
+task :default => [:test]
+
+desc "Run tests"
+Rake::TestTask.new do |t|
+  t.pattern = "test/**/*_test.rb"
+end
