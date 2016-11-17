@@ -1,5 +1,6 @@
 "use strict";
 
+require('../lib/tools')();
 var util = require('util');
 var AWS = require('aws-sdk');
 
@@ -27,10 +28,7 @@ module.exports = {
             RDS.listTagsForResource({"ResourceName" : result.DBInstances[0].DBInstanceArn}, function(err, data){
               if(err) reject(err);
               else {
-                // Tags that begin with "aws:" & "rds:" are restricted and can't be created manually
-                var tags = data.TagList.filter(function(tag){
-                  return ("aws:" != tag.Key.substring(0,4) && "rds:" != tag.Key.substring(0,4));
-                });
+                var tags = data.TagList.filter(cleanupTags);
                 result.DBInstances[0].Tags = tags;
                 fulfill(result.DBInstances[0]);
               }
