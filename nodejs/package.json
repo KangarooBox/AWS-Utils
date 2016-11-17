@@ -11,7 +11,7 @@
     "check-coverage": "NODE_ENV=TEST node_modules/.bin/istanbul check-coverage --statement 100 --branches 100 --functions 100 --lines 100",
     "test": "npm run lint && npm run test-unit && npm run check-coverage",
     "prepackage": "npm run clean && npm install && npm prune --production",
-    "package": "zip package.zip -r node_modules package.json src"
+    "package": "zip package.zip -r node_modules package.json lib scripts"
 },
   "dependencies": {
     "aws-sdk": "~2.6",
