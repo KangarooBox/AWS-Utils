@@ -15,7 +15,8 @@
 },
   "dependencies": {
     "aws-sdk": "~2.6",
-    "slug": "~0.9"
+    "slug": "~0.9",
+    "commander": "~2.9"
   },
   "devDependencies": {
   }
