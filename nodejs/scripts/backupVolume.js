@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
-var EC2 = require("../lib/EC2");
+var EC2 = require('../lib/EC2');
 var program = require('commander');
 
 program
@@ -19,5 +19,5 @@ program
 
 EC2.backupVolume(program.region, program.volume, program.keep, function(err) {
   if (err) { console.error(err); return; }
-  console.log("Done.");
+  console.log('Done.');
 });
